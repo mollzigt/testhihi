@@ -1,6 +1,6 @@
 package se.su.ovning1;
 
-public abstract class Item1 {
+public abstract class Item {
     protected final String name;
     protected Item(String name){
         this.name = name;
