@@ -18,6 +18,7 @@ public class Book extends Item implements PriceableWithVAT6{
             return price;
         }
     }
+
     public boolean getBound(){
         return bound;
     }
