@@ -1,6 +1,7 @@
 package se.su.ovning1;
 //hej jag är mika
 // hej mika jag är molly
+//jag saknar prog-ettan
 public class Main {
     public static void main(String[] args) {
 
