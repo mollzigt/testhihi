@@ -6,7 +6,7 @@ public class LongPlay extends Recording{
         super(name, artist, year, condition, price);
 
     }
-@Override
+    @Override
     public String getType(){
         String LP="LP";
 
@@ -27,14 +27,14 @@ public class LongPlay extends Recording{
         double price = super.getPrice()*((double) super.getCondition()/10 ) + (2025 - this.getYear()) * 5.0;
 
         if (price < 10 && super.getCondition()!=1 ){
-             return 10;
-         }
+            return 10;
+        }
         if(this.getYear()==2025){
             return super.getPrice();
         }
         else {
-             return price;
-         }
+            return price;
+        }
     }
 
 }
