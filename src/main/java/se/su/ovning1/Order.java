@@ -34,7 +34,7 @@ public class Order{
 
         }
         receipt.append("\n"+"Total excl. VAT: "+getTotalValue());
-        receipt.append("\n"+"Total incl. VAT: "+getTotalValuePlusVat());
+        receipt.append("\n"+"Total incl. VAT: "+getTotalValuePlusVAT());
         return receipt.toString();
     }
     public double getTotalValue(){
@@ -45,7 +45,7 @@ public class Order{
         return price;
 
     }
-    public double getTotalValuePlusVat(){
+    public double getTotalValuePlusVAT(){
         double price=0.0;
         for(Item item:items){
             price+=item.getPriceWithVAT();
