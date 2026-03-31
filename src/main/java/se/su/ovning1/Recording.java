@@ -42,8 +42,8 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     //Osäker på om denna metod, kolla över returen
     public String toString(){
-        String LP="LP";
-
+        String LP="";
+        LP+=this.getType();
         LP+= ("name="+(this.getName())+(","));
         LP+= ("artist="+(this.getArtist())+(","));
         LP+= ("year="+(this.getYear())+(","));
