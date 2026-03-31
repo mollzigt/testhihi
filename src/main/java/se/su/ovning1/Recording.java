@@ -19,7 +19,7 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
         return artist;
     }
 
-    //Abstrakt metod mall för subklasser
+    //HÄR KRÄVS EN TYPKONVERTERING FÖR ATT GÖRA METODEN FLEXIBEL  FÖR UTSKRIFTER DÄR TYPEN ÄNDRAS
     public abstract String getType();
 
     public int getCondition(){
