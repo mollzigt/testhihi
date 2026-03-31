@@ -18,7 +18,7 @@ public class Order{
 
         for(Item item:items){
             if (item instanceof Book){
-                receipt.append(((Book) item).getType()).append(": ");
+                receipt.append(((Book) item).toString()).append(": ");
                 receipt.append("name=").append(item.getName()).append(", ");
                 receipt.append("author=").append(((Book) item).getAuthor()).append(", ");
                 receipt.append("bound=").append(((Book) item).getBound()).append(" ");

@@ -28,7 +28,15 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
     }
 
     public double getPrice(){
-        return price;
+        int age = 2025 - year;
+        double newPrice = price * (condition/10.0);
+
+        if (newPrice <= 10){
+            return 10;
+        } else {
+            return newPrice;
+        }
+
     }
 
     //Osäker på om denna metod, kolla över returen

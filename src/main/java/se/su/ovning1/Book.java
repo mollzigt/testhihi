@@ -5,6 +5,8 @@ public class Book extends Item implements PriceableWithVAT6{
     final private boolean bound;
     final private String author;
 
+    //Enligt testen ska denna klass endast ha två publika metoder utöver konstruktor
+
     protected Book(String name, String author, double price, boolean bound) {
         super(name);
         this.price = price;
@@ -22,11 +24,13 @@ public class Book extends Item implements PriceableWithVAT6{
     public boolean getBound(){
         return bound;
     }
+
     public String getAuthor(){
         return author;
     }
 
-    public String getType(){
+    //döpte om till toString. Denna gör fel utskrift
+    public String toString(){
         return "Book";
     }
 }

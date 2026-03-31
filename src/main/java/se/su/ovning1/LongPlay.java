@@ -13,18 +13,13 @@ public class LongPlay extends Recording{
 
     @Override
     public double getPrice(){
-        double age = 2025-this.getYear();
-        double priceIncrease = age*5;
-        double conditionFactor= (double) this.getCondition()/10;
-        double conditionPrice = conditionFactor * this.getOriginalPrice() ;
+        double price = super.getPrice() + (2025 - this.getYear()) * 5.0;
 
-        if(age == 0 && conditionFactor == 0){
-            return getOriginalPrice();
-
-        }else{
-            return conditionPrice + priceIncrease;
-
-        }
+        if (price < 10){
+             return 10;
+         } else {
+             return price;
+         }
     }
 
 }
