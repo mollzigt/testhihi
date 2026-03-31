@@ -12,6 +12,7 @@ public class Order {
         return "";
     }
     public double getTotalValue(){
+        return 0.0;
 
     }
 }
