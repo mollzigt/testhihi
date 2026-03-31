@@ -30,6 +30,7 @@ public class LongPlay extends Recording{
         if (price < 10 && super.getCondition()!=1 ){
             return 10;
         }
+        //i VPL så MÅSTE 2026 tas upp här
         if(this.getYear()==2025){
             return super.getPrice();
         }
