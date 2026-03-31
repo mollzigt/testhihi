@@ -42,18 +42,18 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     //Osäker på om denna metod, kolla över returen
     public String toString(){
-        String LP="";
-        LP+=this.getType();
-        LP+= ("name="+(this.getName())+(","));
-        LP+= ("artist="+(this.getArtist())+(","));
-        LP+= ("year="+(this.getYear())+(","));
-        LP+= ("condition="+(this.getCondition())+(","));
-        LP+= ("original price="+(this.getOriginalPrice())+(","));
-        LP+= ("price="+(this.getPrice())+(","));
-        LP+= ("price+VAT="+(super.getPriceWithVAT())+(","));
+        String string="";
+        string+=this.getType();
+        string+= ("name="+(this.getName())+(","));
+        string+= ("artist="+(this.getArtist())+(","));
+        string+= ("year="+(this.getYear())+(","));
+        string+= ("condition="+(this.getCondition())+(","));
+        string+= ("original price="+(this.getOriginalPrice())+(","));
+        string+= ("price="+(this.getPrice())+(","));
+        string+= ("price+VAT="+(super.getPriceWithVAT())+(","));
 
 
-        return LP;
+        return string;
     }
 
     public int getYear(){
