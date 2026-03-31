@@ -28,7 +28,11 @@ public class LongPlay extends Recording{
 
         if (price < 10){
              return 10;
-         } else {
+         }
+        if(this.getYear()==2025){
+            return super.getPrice();
+        }
+        else {
              return price;
          }
     }
