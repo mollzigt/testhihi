@@ -15,6 +15,18 @@ public class Order{
     }
     public String getReceipt() {
         StringBuilder receipt = new StringBuilder("Receipt for order #" + orderNumber + "\n");
+
+        for(Item item:items){
+            receipt.append(item.toString());
+        }
+        receipt.append("\n" + "Total excl. VAT: ").append(getTotalValue());
+        receipt.append("\n" + "Total incl. VAT: ").append(getTotalValuePlusVAT());
+        return receipt.toString();
+
+    }
+    /* NEDAN FINNS VÅR GAMLA KOD SOM FORMATERAR KVITTOT, MEN ALLT ÄR REDUNDANT JUST NU
+    public String getReceipt() {
+        StringBuilder receipt = new StringBuilder("Receipt for order #" + orderNumber + "\n");
         //här kan vi bara anropa metoderna som formaterar strängarna i book och recording
         for(Item item:items){
             if (item instanceof Book){
@@ -37,6 +49,8 @@ public class Order{
         receipt.append("\n"+"Total incl. VAT: "+getTotalValuePlusVAT());
         return receipt.toString();
     }
+
+     */
     public double getTotalValue(){
         double price=0.0;
         for(Item item:items){
