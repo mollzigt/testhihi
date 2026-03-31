@@ -31,6 +31,13 @@ public class Book extends Item implements PriceableWithVAT6{
 
     //döpte om till toString. Denna gör fel utskrift
     public String toString(){
-        return "Book";
+        String receipt="Book";
+        receipt+= ("bound="+(this.getBound())+(" "));
+        receipt+= ("name="+(this.getName())+(", "));
+        receipt+= ("author="+(this.getAuthor())+(", "));
+        receipt+= ("price="+(this.getPrice())+(", "));
+        receipt+= ("price+VAT="+(this.getPriceWithVAT())+(", "));
+
+        return receipt;
     }
 }

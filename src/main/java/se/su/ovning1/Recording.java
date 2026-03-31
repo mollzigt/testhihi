@@ -30,9 +30,11 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
         int age = 2025 - year;
         double newPrice = price * (condition/10.0);
 
-        if (newPrice <= 10){
+
+        if (newPrice <= 10 ){
             return 10;
-        } else {
+        }
+        else {
             return newPrice;
         }
 
@@ -40,7 +42,18 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     //Osäker på om denna metod, kolla över returen
     public String toString(){
-        return "recording";
+        String LP="LP";
+
+        LP+= ("name="+(this.getName())+(","));
+        LP+= ("artist="+(this.getArtist())+(","));
+        LP+= ("year="+(this.getYear())+(","));
+        LP+= ("condition="+(this.getCondition())+(","));
+        LP+= ("original price="+(this.getOriginalPrice())+(","));
+        LP+= ("price="+(this.getPrice())+(","));
+        LP+= ("price+VAT="+(super.getPriceWithVAT())+(","));
+
+
+        return LP;
     }
 
     public int getYear(){

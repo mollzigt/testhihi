@@ -6,14 +6,25 @@ public class LongPlay extends Recording{
         super(name, artist, year, condition, price);
 
     }
-
+@Override
     public String getType(){
-        return "LP";
+        String LP="LP";
+
+        LP+= ("name="+(super.getName())+(","));
+        LP+= ("artist="+(super.getArtist())+(","));
+        LP+= ("year="+(super.getYear())+(","));
+        LP+= ("condition="+(super.getCondition())+(","));
+        LP+= ("original price="+(super.getOriginalPrice())+(","));
+        LP+= ("price="+(super.getPrice())+(","));
+        LP+= ("price+VAT="+(super.getPriceWithVAT())+(","));
+
+
+        return LP;
     }
 
     @Override
     public double getPrice(){
-        double price = super.getPrice()*((double) super.getCondition() /10) + (2025 - this.getYear()) * 5.0;
+        double price = super.getPrice()*((double) super.getCondition()/10 ) + (2025 - this.getYear()) * 5.0;
 
         if (price < 10){
              return 10;
