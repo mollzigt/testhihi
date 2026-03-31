@@ -27,6 +27,6 @@ public class Book extends Item implements PriceableWithVAT6{
     }
     @Override
     public String toString(){
-        return "";
+        return "Book";
     }
 }
