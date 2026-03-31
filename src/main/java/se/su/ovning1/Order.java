@@ -20,8 +20,8 @@ public class Order{
             if (item instanceof Book){
                 receipt.append(((Book) item).toString()).append(": ");
                 receipt.append("name=").append(item.getName()).append(", ");
-                receipt.append("author=").append(((Book) item).getAuthor()).append(", ");
-                receipt.append("bound=").append(((Book) item).getBound()).append(" ");
+               // receipt.append("author=").append(((Book) item).getAuthor()).append(", ");
+               // receipt.append("bound=").append(((Book) item).getBound()).append(" ");
                 receipt.append("price=").append(((Book) item).getPrice()).append(" ");
                 receipt.append("price+VAT=").append(((Book) item).getPriceWithVAT()).append(" ");
             }else{
