@@ -13,7 +13,7 @@ public class LongPlay extends Recording{
 
     @Override
     public double getPrice(){
-        double price = super.getPrice() + (2025 - this.getYear()) * 5.0;
+        double price = super.getPrice()*((double) super.getCondition() /10) + (2025 - this.getYear()) * 5.0;
 
         if (price < 10){
              return 10;
