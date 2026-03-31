@@ -15,7 +15,7 @@ public class Order{
     }
     public String getReceipt() {
         StringBuilder receipt = new StringBuilder("Receipt for order #" + orderNumber + "\n");
-
+        //här kan vi bara anropa metoderna som formaterar strängarna i book och recording
         for(Item item:items){
             if (item instanceof Book){
                 receipt.append(((Book) item).toString()).append(": ");
