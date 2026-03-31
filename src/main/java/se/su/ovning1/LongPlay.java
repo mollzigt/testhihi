@@ -10,6 +10,7 @@ public class LongPlay extends Recording{
     public String getType(){
         String LP="LP";
 
+
         LP+= ("name="+(super.getName())+(","));
         LP+= ("artist="+(super.getArtist())+(","));
         LP+= ("year="+(super.getYear())+(","));
