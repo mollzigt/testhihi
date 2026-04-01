@@ -16,7 +16,6 @@ public class Main {
         Item lp3 = new LongPlay("Little Oblivions", "Julien Baker", 2021, 10, 120);
 
         Order order1 = new Order(book1, book2bound);
-        System.out.println(book2.toString());
         System.out.println(order1.getReceipt());
 
 		/*
