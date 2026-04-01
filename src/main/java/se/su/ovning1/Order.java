@@ -20,10 +20,8 @@ public class Order{
 
         for(Item item:items){
             receipt.append(item.toString()).append(": ");
-
-
-
         }
+
         receipt.append("\n"+"Total excl. VAT: "+getTotalValue());
         receipt.append("\n"+"Total incl. VAT: "+getTotalValuePlusVAT());
         return receipt.toString();

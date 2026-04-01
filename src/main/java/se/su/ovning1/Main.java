@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Item book1 = new Book("A guide to modern jazz", "Unknown author", 100, false);
-        Item book2 = new Book("Beethoven: a biography", "Holmqvist", 400, false);
+        Item book2 = new Book("Beethoven: a biography", "Holmqvist", 400, true);
         Item book2bound = new Book("Beethoven: a biography", "Holmqvist", 400, true);
 
         Item item1 = new LongPlay("Giant Steps", "John Coltrane", 1959, 10, 100);
@@ -16,7 +16,7 @@ public class Main {
         Item lp3 = new LongPlay("Little Oblivions", "Julien Baker", 2021, 10, 120);
 
         Order order1 = new Order(book1, book2bound);
-
+        System.out.println(book2.toString());
         System.out.println(order1.getReceipt());
 
 		/*

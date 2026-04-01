@@ -7,7 +7,6 @@ public class Book extends Item implements PriceableWithVAT6{
     private final String author;
 
 
-
     protected Book(String name, String author, double price, boolean bound) {
         super(name);
         this.price = price;
@@ -22,20 +21,12 @@ public class Book extends Item implements PriceableWithVAT6{
         }
     }
 
-    private boolean getBound(){
-        return bound;
-    }
-
-    private String getAuthor(){
-        return author;
-    }
-
     //döpte om till toString. Denna gör fel utskrift
     public String toString(){
         String str="Book: ";
-        str+= "bound="+this.getBound();
+        str+= "bound="+this.bound;
         str+= "name="+this.getName();
-        str+= "author="+this.getAuthor();
+        str+= "author="+this.author;
         str+= "price="+this.getPrice();
         str+= "price+VAT="+this.getPriceWithVAT();
 
