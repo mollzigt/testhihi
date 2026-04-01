@@ -1,10 +1,12 @@
 package se.su.ovning1;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 public class Order{
-    private final long orderNumber;
     private static long counter;
+    private final long orderNumber;
+
     private final List<Item>items=new ArrayList<>();
 
 
@@ -17,40 +19,16 @@ public class Order{
         StringBuilder receipt = new StringBuilder("Receipt for order #" + orderNumber + "\n");
 
         for(Item item:items){
-            receipt.append(item.toString());
-        }
-        receipt.append("\n" + "Total excl. VAT: ").append(getTotalValue());
-        receipt.append("\n" + "Total incl. VAT: ").append(getTotalValuePlusVAT());
-        return receipt.toString();
+            receipt.append(item.toString()).append(": ");
 
-    }
-    /* NEDAN FINNS VÅR GAMLA KOD SOM FORMATERAR KVITTOT, MEN ALLT ÄR REDUNDANT JUST NU
-    public String getReceipt() {
-        StringBuilder receipt = new StringBuilder("Receipt for order #" + orderNumber + "\n");
-        //här kan vi bara anropa metoderna som formaterar strängarna i book och recording
-        for(Item item:items){
-            if (item instanceof Book){
-                receipt.append(((Book) item).toString()).append(": ");
-                receipt.append("name=").append(item.getName()).append(", ");
-               // receipt.append("author=").append(((Book) item).getAuthor()).append(", ");
-               // receipt.append("bound=").append(((Book) item).getBound()).append(" ");
-                receipt.append("price=").append(((Book) item).getPrice()).append(" ");
-                receipt.append("price+VAT=").append(((Book) item).getPriceWithVAT()).append(" ");
-            }else{
-                receipt.append(((Recording) item).getType()).append(": ");
-                receipt.append("name=").append(item.getName()).append(", ");
-                receipt.append("year=").append(((Recording) item).getYear()).append(", ");
-                receipt.append("price=").append(item.getPrice()).append(" ");
-            }
 
 
         }
         receipt.append("\n"+"Total excl. VAT: "+getTotalValue());
         receipt.append("\n"+"Total incl. VAT: "+getTotalValuePlusVAT());
         return receipt.toString();
-    }
 
-     */
+    }
     public double getTotalValue(){
         double price=0.0;
         for(Item item:items){

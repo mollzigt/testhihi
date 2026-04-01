@@ -1,11 +1,12 @@
 package se.su.ovning1;
 
-public class Book extends Item implements PriceableWithVAT6{
-    final private double price;
-    final private boolean bound;
-    final private String author;
 
-    //Enligt testen ska denna klass endast ha två publika metoder utöver konstruktor
+public class Book extends Item implements PriceableWithVAT6{
+    private final double price;
+    private final boolean bound;
+    private final String author;
+
+
 
     protected Book(String name, String author, double price, boolean bound) {
         super(name);
@@ -31,12 +32,12 @@ public class Book extends Item implements PriceableWithVAT6{
 
     //döpte om till toString. Denna gör fel utskrift
     public String toString(){
-        String receipt="Book";
-        receipt+= ("bound="+(this.getBound())+(" "));
-        receipt+= ("name="+(this.getName())+(", "));
-        receipt+= ("author="+(this.getAuthor())+(", "));
-        receipt+= ("price="+(this.getPrice())+(", "));
-        receipt+= ("price+VAT="+(this.getPriceWithVAT())+(", "));
+        String receipt="Book: ";
+        receipt+= "bound="+this.getBound();
+        receipt+= "name="+this.getName();
+        receipt+= "author="+this.getAuthor();
+        receipt+= "price="+this.getPrice();
+        receipt+= "price+VAT="+this.getPriceWithVAT();
 
         return receipt;
     }

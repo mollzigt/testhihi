@@ -1,5 +1,7 @@
 package se.su.ovning1;
 
+
+
 public class LongPlay extends Recording{
 
     public LongPlay (String name, String artist, int year, int condition, double price) {
@@ -8,30 +10,28 @@ public class LongPlay extends Recording{
     }
     @Override
     public String getType(){
-        String LP="LP";
+        String s="LP: ";
+
+        s+= "name= '"+super.getName();
+        s+= " artist="+super.getArtist();
+        s+= " year="+super.getYear();
+        s+= " condition="+super.getCondition();
+        s+= " original price="+super.getOriginalPrice();
+        s+= " price="+super.getPrice();
+        s+= " price+VAT="+super.getPriceWithVAT();
 
 
-        LP+= ("name="+(super.getName())+(","));
-        LP+= ("artist="+(super.getArtist())+(","));
-        LP+= ("year="+(super.getYear())+(","));
-        LP+= ("condition="+(super.getCondition())+(","));
-        LP+= ("original price="+(super.getOriginalPrice())+(","));
-        LP+= ("price="+(super.getPrice())+(","));
-        LP+= ("price+VAT="+(super.getPriceWithVAT())+(","));
-
-
-        return LP;
+        return s;
     }
 
     @Override
     public double getPrice(){
-        double price = super.getPrice()*((double) super.getCondition()/10 ) + (2025 - this.getYear()) * 5.0;
+        double price = super.getPrice()*((double) super.getCondition()/10 ) + (2025 - super.getYear()) * 5.0;
 
         if (price < 10 && super.getCondition()!=1 ){
             return 10;
         }
-        //i VPL så MÅSTE 2026 tas upp här
-        if(this.getYear()==2025){
+        if(this.getYear()==2026){
             return super.getPrice();
         }
         else {

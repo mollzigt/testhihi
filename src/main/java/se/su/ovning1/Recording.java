@@ -1,7 +1,9 @@
 package se.su.ovning1;
 
+
+
 public abstract class Recording extends Item implements PriceableWithVAT25 {
-    //Denna konstruktor behöver kärlek
+
     private final String artist;
     private final int year;
     private int condition;
@@ -19,7 +21,7 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
         return artist;
     }
 
-    //HÄR KRÄVS EN TYPKONVERTERING FÖR ATT GÖRA METODEN FLEXIBEL  FÖR UTSKRIFTER DÄR TYPEN ÄNDRAS
+
     public abstract String getType();
 
     public int getCondition(){
@@ -27,31 +29,29 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
     }
 
     public double getPrice(){
+        int age = 2025 - year;
+        double newPrice = price * (condition/10.0);
 
-        double newPrice = price * (getCondition()/10.0);
 
-
-        if (newPrice < 10 ) {
+        if (newPrice <= 10){
             return 10;
         }
-
         else {
             return newPrice;
         }
 
     }
-
-    //Osäker på om denna metod, kolla över returen
+    @Override
     public String toString(){
         String string="";
         string+=this.getType();
-        string+= ("name="+(this.getName())+(","));
-        string+= ("artist="+(this.getArtist())+(","));
-        string+= ("year="+(this.getYear())+(","));
-        string+= ("condition="+(this.getCondition())+(","));
-        string+= ("original price="+(this.getOriginalPrice())+(","));
-        string+= ("price="+(this.getPrice())+(","));
-        string+= ("price+VAT="+(super.getPriceWithVAT())+(","));
+        string+= "name="+this.getName();
+        string+= "artist="+this.getArtist();
+        string+= "year="+this.getYear();
+        string+= "condition="+this.getCondition();
+        string+= "original price="+this.getOriginalPrice();
+        string+= "price="+this.getPrice();
+        string+= "price+VAT="+this.getPriceWithVAT();
 
 
         return string;
@@ -61,7 +61,7 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
         return year;
     }
 
-    //Vad är original price?? Kolla över detta
+
     protected double getOriginalPrice(){
         return price;
     }

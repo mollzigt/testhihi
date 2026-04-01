@@ -55,7 +55,7 @@ public class Exercise1Test {
     @org.junit.jupiter.api.Order(12)
     @DisplayName("Book: testar att toString innehåller nödvändig information.")
     @CsvSource({"For Whom The Bell Tolls, Ernest Hemingway, 125.0, true",
-        "William Gibson, Neuromancer, 200.0, false"})
+            "William Gibson, Neuromancer, 200.0, false"})
     void bookCorrectToString(String title, String author, double price, boolean bound) {
         var book = new Book(title, author, price, bound);
         var parts = Set.of(title, author, ("" + (bound ? price * 1.3 : price)), String.valueOf(bound));
@@ -183,7 +183,7 @@ public class Exercise1Test {
     @ParameterizedTest
     @org.junit.jupiter.api.Order(21)
     @DisplayName("Recording: testar att LongPlay får rätt pris.")
-    @CsvSource({"2025,10,200,200,250", "2025,5,200,100,125", "2025,1,200,20,25", "2025,0,200,10,12.5"})
+    @CsvSource({"2026,10,200,200,250", "2026,5,200,100,125", "2026,1,200,20,25", "2026,0,200,10,12.5"})
     void recordingCorrectPriceForLP(int year, int condition, double price, double expected, double plusVat) {
         var message = String.format("Klassen LongPlay: värdet (exkl. moms) på en LP beräknas inte rätt för slitage %d.", condition);
 
@@ -240,7 +240,7 @@ public class Exercise1Test {
     @org.junit.jupiter.api.Order(24)
     @DisplayName("Recording: testar att värdet inte hamnar under 10.0.")
     void recordingGetsCorrectMinimumValue() {
-        Recording item = new LongPlay("test", "test", 2025, 1, 90);
+        Recording item = new LongPlay("test", "test", 2026, 1, 90);
         assertEquals(10.0, item.getPrice(), "Fel värde för Longplay med condition 1.");
 
         item = new CompactDisc("test", "test", 2024, 0, 5);
